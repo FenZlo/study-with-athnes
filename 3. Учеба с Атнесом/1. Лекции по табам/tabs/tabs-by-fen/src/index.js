@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
 /* const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,39 +16,39 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 /* reportWebVitals(); */
 
-
 function handleTabsClickEvent(e) {
   const node = e.target;
   const root = e.currentTarget;
 
-  if (!node.classList.contains('tabs__item')) return;
+  if (!node.classList.contains("tabs__item")) return;
 
-  const enabledTabNode = root.querySelector('.tabs__item_enabled');
+  const enabledTabNode = root.querySelector(".tabs__item_enabled");
 
   if (enabledTabNode) {
-    enabledTabNode.classList.remove('tabs__item_enabled');
-   }
+    enabledTabNode.classList.remove("tabs__item_enabled");
+  }
 
-  node.classList.add('tabs__item_enabled');
+  node.classList.add("tabs__item_enabled");
 
   const id = node.dataset.id;
 
-  const contentNode = root.querySelector(`.tabs__content-item[data-id="${id}"]`)
+  const contentNode = root.querySelector(
+    `.tabs__content-item[data-id="${id}"]`
+  );
 
-  const enabledContentNode = root.querySelector('.tabs__content-item_enabled');
+  const enabledContentNode = root.querySelector(".tabs__content-item_enabled");
 
   if (enabledContentNode) {
-    enabledContentNode.classList.remove('tabs__content-item_enabled');
-   }
+    enabledContentNode.classList.remove("tabs__content-item_enabled");
+  }
 
-  contentNode.classList.add('tabs__content-item_enabled');
-
-
+  contentNode.classList.add("tabs__content-item_enabled");
 }
 
 function registerTabsController(rootNode) {
-  rootNode.addEventListener('click', handleTabsClickEvent);
+  rootNode.addEventListener("click", handleTabsClickEvent);
 }
 
-
-document.querySelectorAll('.tabs').forEach(node => registerTabsController(node))
+document
+  .querySelectorAll(".tabs")
+  .forEach((node) => registerTabsController(node));
