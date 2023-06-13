@@ -18,11 +18,13 @@ code {
 }
 
 .tabs__item {
-  background-color: green;
+}
+
+.tabs__item:focus {
 }
 
 .tabs__item_enabled {
-  background-color: red;
+  background-color: green;
 }
 
 .tabs__content-item {
